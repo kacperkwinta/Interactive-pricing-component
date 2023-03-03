@@ -10,12 +10,64 @@
 			href="./images/favicon-32x32.png"
 		/>
 		<title>Frontend Mentor | Interactive pricing component</title>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+			rel="stylesheet"
+		/>
 		<!-- CSS -->
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	<body>
-		<!-- Simple, traffic-based pricing Sign-up for our 30-day trial. No credit card
-		required. Pageviews $ /month Monthly Billing Yearly Billing 25% discount
+		<main>
+			<article>
+				<h1 class="heading-primary">Simple, traffic-based pricing</h1>
+				<p class="main-paragraph">
+					Sign-up for our 30-day trial. No credit card required.
+				</p>
+			</article>
+
+			<section class="section-offer"> 
+				<div class="offer-details">
+					<p class="page-views">100k pageviews</p>
+					<p class="offer-cost"><span>$16.00</span>/month</p>
+				</div>
+
+				<div class="input-wrapper">
+					<input
+					step="25"
+						type="range"
+						min="1"
+						max="101"
+						value="50"
+						class="input-slider"
+						id="myRange"
+					/>
+				</div>
+
+				<div class="billing-box">
+					<span>Monthly Billing</span>
+					<div class="button">
+						<button class="dot">&nbsp;</button>
+					</div>
+					<span> Yearly Billing </span>
+					<span class="discount">25% discount</span>
+				</div>
+			</section>
+			<section class="section-features">
+				<div class="offer-features">
+					<div class="offer-wrapper">
+						<p><img src="images/icon-check.svg" alt="" />Unlimited websites</p>
+						<p><img src="images/icon-check.svg" alt="" />100% data ownership</p>
+						<p><img src="images/icon-check.svg" alt="" />Email reports</p>
+					</div>
+					<button class="btn">Start my trial</button>
+				</div>
+			</section>
+		</main>
+		<!--   Pageviews $ /month Monthly Billing Yearly Billing 25% discount
 		Unlimited websites 100% data ownership Email reports Start my trial -->
 
 		<!-- <div class="attribution">
