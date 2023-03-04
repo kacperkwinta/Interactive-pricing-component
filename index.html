@@ -29,22 +29,33 @@
 				</p>
 			</article>
 
-			<section class="section-offer"> 
+			<section class="section-offer">
 				<div class="offer-details">
 					<p class="page-views">100k pageviews</p>
-					<p class="offer-cost"><span>$16.00</span>/month</p>
+
+					<span class="offer-cost">
+						<!-- price is for styling (big dark blue text) -->
+						<span class="price">
+							$
+							<!-- numbers is for price calculating -->
+							<span class="numbers">16</span>.00 </span
+						>/month
+					</span>
 				</div>
 
 				<div class="input-wrapper">
+					<div class="bar">
+						<div class="fill"></div>
+					</div>
 					<input
-					step="25"
+						step="25"
 						type="range"
-						min="1"
-						max="101"
+						min="0"
+						max="100"
 						value="50"
 						class="input-slider"
-						id="myRange"
 					/>
+					<label for="input"></label>
 				</div>
 
 				<div class="billing-box">
@@ -67,8 +78,6 @@
 				</div>
 			</section>
 		</main>
-		<!--   Pageviews $ /month Monthly Billing Yearly Billing 25% discount
-		Unlimited websites 100% data ownership Email reports Start my trial -->
 
 		<!-- <div class="attribution">
 			Challenge by
@@ -76,5 +85,7 @@
 				>Frontend Mentor</a
 			>. Coded by <a href="#">Your Name Here</a>.
 		</div> -->
+
+		<script src="js/script.js"></script>
 	</body>
 </html>

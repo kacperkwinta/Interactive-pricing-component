@@ -40,9 +40,9 @@ html {
 body {
 	font-size: 1.5rem;
 	line-height: 1;
-	background-color: var(--color-neutral-2);
+	// background-color: var(--color-neutral-2);
 	background-image: url(../images/bg-pattern.svg);
-	background-size: cover;
+	background-position-x: 100%;
 	background-repeat: no-repeat no-repeat;
 }
 
@@ -98,7 +98,7 @@ article {
 		align-items: center;
 		gap: 0.4rem;
 
-		span {
+		.price {
 			font-size: 4rem;
 			color: var(--color-neutral-6);
 			font-weight: 800;
@@ -107,26 +107,55 @@ article {
 }
 
 .input-wrapper {
-	margin: 1.6rem auto;
+	margin: 4.8rem auto;
+	position: relative;
+
+	display: flex;
+	align-items: center;
 }
 
-.input-slider {
-	margin: 3rem auto;
+// SLIDER BAR BACKGROUND
+.bar {
+	position: absolute;
+	z-index: 1;
+	left: 2px;
+	top: 1px;
 	width: 100%;
-	cursor: pointer;
-	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-	appearance: none;
+	height: 0.8rem;
+	border-radius: 5px;
+	overflow: hidden;
+	transform: translateY(-0.4rem);
+	background-color: var(--color-neutral-3);
+}
+
+// SLIDER BAR FILL
+.fill {
+	width: 50%;
+	height: 100%;
 	background-color: var(--color-primary-1);
 }
 
-.input-slider::-webkit-slider-runnable-track {
-	border-radius: 5rem;
-	height: 1rem;
+// SLIDER BAR
+.input-slider {
+	/* Hides the slider so that custom slider can be made */
+	-webkit-appearance: none;
+	appearance: none;
+
+	position: relative;
+	width: 100%;
+	height: 0;
+	border-radius: 10rem;
+	z-index: 2;
 }
 
+// DOT TO SLIDE OVER IMPUT
 .input-slider::-webkit-slider-thumb {
-	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+	/* Hides the slider so that custom slider can be made */
+	-webkit-appearance: none;
 	appearance: none;
+
+	cursor: pointer;
+	transition: all 0.2s ease;
 	width: 4rem;
 	height: 4rem;
 	border-radius: 50%;
@@ -134,11 +163,74 @@ article {
 	background-image: url(../images/icon-slider.svg);
 	background-repeat: no-repeat no-repeat;
 	background-position: center;
+	box-shadow: hsla(174, 86%, 45%, 0.63) 0px 10px 20px 0px;
+
+	&:hover {
+		background-color: hsl(174, 86%, 35%);
+	}
+
+	&:active {
+		cursor: grab;
+		background-color: hsl(174, 86%, 55%);
+	}
+}
+
+// same stuf for Firefox
+.input-slider::-moz-range-thumb {
+	/* Hides the slider so that custom slider can be made */
+	-webkit-appearance: none;
+	appearance: none;
+
+	border: none;
 	cursor: pointer;
+	transition: all 0.2s ease;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	background-color: var(--color-primary-2);
+	background-image: url(../images/icon-slider.svg);
+	background-repeat: no-repeat no-repeat;
+	background-position: center;
+	box-shadow: hsla(174, 86%, 45%, 0.63) 0px 10px 20px 0px;
+
+	&:hover {
+		background-color: hsl(174, 86%, 35%);
+	}
+
+	&:active {
+		cursor: grab;
+		background-color: hsl(174, 86%, 55%);
+	}
+}
+
+// same stuf for IE
+.input-slider::-ms-thumb {
+	/* Hides the slider so that custom slider can be made */
+	-webkit-appearance: none;
+	appearance: none;
+
+	cursor: pointer;
+	transition: all 0.2s ease;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	background-color: var(--color-primary-2);
+	background-image: url(../images/icon-slider.svg);
+	background-repeat: no-repeat no-repeat;
+	background-position: center;
+	box-shadow: hsla(174, 86%, 45%, 0.63) 0px 10px 20px 0px;
+
+	&:hover {
+		background-color: hsl(174, 86%, 35%);
+	}
+
+	&:active {
+		cursor: grab;
+		background-color: hsl(174, 86%, 55%);
+	}
 }
 
 .billing-box {
-	padding-right: 2.4rem;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -162,7 +254,6 @@ article {
 
 		&:hover {
 			cursor: pointer;
-			background-color: var(--color-primary-1);
 		}
 	}
 
@@ -178,6 +269,7 @@ article {
 		width: 1.6rem;
 		border-radius: 50%;
 		background-color: var(--color-neutral-2);
+		transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
 	.dot--active {
